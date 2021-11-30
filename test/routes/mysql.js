@@ -8,7 +8,7 @@ router.get('/', function(req,res,next){
         host : 'localhost',
         port : 3306,
         user : 'root',
-        password : 'quswjdgus1!',
+        password : 'poiuqwer!008',
         database : 'project'
     });
 
