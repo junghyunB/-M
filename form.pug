@@ -1,0 +1,23 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Form test 
+
+body 
+    h1 입력 여기다가
+        div
+            form(action = '/form.pug' method = POST)          
+
+                <br>
+                button(type = "submit") info where to go!
+
+                <br>
+                input(type="text" name="search" placeholder= "검색값검색" value = " ")
+                button(type = "text" onclick="findArr()") 검색
+                
+
+
+//- action = '/info' 가 의미가 있음.
