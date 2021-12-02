@@ -25,7 +25,7 @@ router.post('/write', function(req, res, next){
     var passwd = req.body.passwd;
     var datas = [name, title, content, passwd]; // 모든데이터를 배열로 묶기
     // req 객체로 body 속성에서 input 파라미터 가져오기
-    var sql = "insert into board(name, title, content, regdate, modidate, passwd,hit) values(?,?,?,now(),now(),?,?)";  // ? 는 매개변수
+    var sql = "insert into board(name, title, content, regdate, modidate, passwd,hit) values(?,?,?,now(),now(),?,0)";  // ? 는 매개변수
     connection.query(sql, datas, function(err,rows){ // datas 를 매개변수로 추가
         if (err) console.error("err : " + err);
         res.redirect('/board/page')

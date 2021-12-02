@@ -9,12 +9,8 @@ app.use(bodyParser.json());
 
 
 var boardRouter = require('./routes/board')
-<<<<<<< HEAD
-
-=======
 var mysqlRouter = require('./routes/mysql')
 app.use('/form', formRouter);
->>>>>>> 6d6857ac3d94f825a58c1f9d8f60d08f9283e28b
 app.use('/mysql', mysqlRouter);
 app.use('/board', boardRouter);  //항상 추가해주자 라우터를 만들면 app.js 메인파일에 추가 항상!
 

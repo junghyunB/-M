@@ -31,7 +31,7 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/page">Board</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/contact">Sign up</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/login">Login</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/post">Cart</a></li>  
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/cartlist/cart">Cart</a></li>  
                     </ul>
                 </div>
             </div>
@@ -52,8 +52,40 @@
         <!-- Main Content-->
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">                    
-                       <a><img class='size' src='submain/assets/img/1.jpg'> <img class='size' src ='submain/assets/img/2.jpg'><img class='size' src='submain/assets/img/3.jpg'><img class='size' src='submain/assets/img/4.jpeg'>                        <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="/register">음원 등록하기</a></div>
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="my-5">
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+                            <h1 class='headline'>장바구니</h1>
+                            <br>
+                            <br>
+                            <form id="contactForm" action="/cartlist/Selling" method="post">
+                                <div class="form-floating">
+                                    <input class="form-control" name="music" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <label for="name">노래</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" name="singer" type="text" placeholder="Enter your email..." data-sb-validations="required" />
+                                    <label for="email">가수</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" name="price" id="message" type="number" placeholder="Enter your message here..." data-sb-validations="required">
+                                    <label for="message">가격</label>
+                                </div>
+                                <br />
+                                <br />
+                                <div class='headline'>
+                                <button type="submit" class="btn btn-outline-success">장바구니</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -62,8 +94,8 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <ul class="list-inline text-center">
-                            <li class="list-inline-item">
+                        <!-- <ul class="list-inline text-center">
+                            <li class="list-inline-item"> -->
                                 <!-- <a href="#!">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>

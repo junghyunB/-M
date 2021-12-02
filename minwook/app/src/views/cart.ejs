@@ -28,15 +28,15 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/Selling">Selling</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/page">Board</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/cart">Board</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/contact">Sign up</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/login">Login</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/post">Cart</a></li>  
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/cart">Cart</a></li>  
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Page Header-->
+        <!-- cart Header-->
         <header class="masthead" style="background-image: url('/submain/assets/img/shopping-cart.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -51,46 +51,59 @@
             </div>
         </header>
         <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="#">
-                            <h5>test1</h5>
-                        </a>
-                    </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href='#'>
-                        <h5>test2</h5> 
-                        </a>                      
-                    </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="#">
-                            <h5>test3</h5>
-                        </a>
-                    </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="#">
-                            <h5>test4</h5>
-                        </a>
-                    </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Pager-->
-                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!"></a></div>
-                </div>
+        <div style="text-align: center; ">
+            <div style="display: inline-block; width:80%;">
+                <p style="padding: 18px;"><h1 class='headline'>장바구니</h1>
+                <br>
+                <div>
+                    <!-- <table border="1"> -->
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center;">No</th>
+                            <th style="text-align: center;">노래</th>
+                            <th style="text-align: center;">가수</th>
+                            <th style="text-align: center;">가격</th>
+                          </tr>
+                        </thead>
+                    <%
+                    for(var i = (cart * cart_num) - cart_num; i < (cart * cart_num); i++) {
+                    if(i > length){
+                        i++;
+                    }else{
+                        var data = rows[i]
+                    %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td><%= data.music %></td>
+                        <td><%= data.singer %></td>
+                        <td><%= data.price %></td>
+                    </tr>
+                    <% }
+                    }
+                    %>
+                    <tr>
+                        <td colspan="6" class='headline' >
+                            <%
+                            for(var j = 0; j < rows.length / cart_num; j++){
+                            %>
+                            <!-- row.length = 글총갯수  cart_num= 페이지당 최대 글수 -->
+                           
+                            [<a href="/board/cart/<%= j + 1 %>" style="text-decoration: none; color: black"><%= j + 1 %></a>]
+                            <%
+                            }
+                            %>
+                        </td>
+                    </tr>
+                    </table>
+                
+                <div class="write" style="text-align: right;">
+                <button type="button" class="btn btn-outline-success" onclick="location.href='/board/write'">글쓰기</button>   
+             </div>
             </div>
-        </div>
+            </div>
+            </div>
+            <br>
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">

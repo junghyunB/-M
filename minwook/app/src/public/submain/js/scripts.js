@@ -27,3 +27,4 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollPos = currentTop;
     });
 })
+ var title = '게시판 글쓰기'
