@@ -28,16 +28,16 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/Selling">Selling</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/cart">Board</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/page">Board</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/contact">Sign up</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-4" href="/login">Login</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/cart">Cart</a></li>  
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/cartlist/cart">Cart</a></li>  
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- cart Header-->
-        <header class="masthead" style="background-image: url('/submain/assets/img/shopping-cart.jpg')">
+        <header class="masthead" style="background-image: url('/submain/assets/img/cart3.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -53,8 +53,7 @@
         <!-- Main Content-->
         <div style="text-align: center; ">
             <div style="display: inline-block; width:80%;">
-                <p style="padding: 18px;"><h1 class='headline'>장바구니</h1>
-                <br>
+                <!-- <p style="padding: 18px;"><h1 class='headline'>장바구니</h1> -->
                 <div>
                     <!-- <table border="1"> -->
                     <table class="table table-hover">
@@ -89,7 +88,7 @@
                             %>
                             <!-- row.length = 글총갯수  cart_num= 페이지당 최대 글수 -->
                            
-                            [<a href="/board/cart/<%= j + 1 %>" style="text-decoration: none; color: black"><%= j + 1 %></a>]
+                            [<a href="/cartlist/cart/<%= j + 1 %>" style="text-decoration: none; color: black"><%= j + 1 %></a>]
                             <%
                             }
                             %>
@@ -98,7 +97,8 @@
                     </table>
                 
                 <div class="write" style="text-align: right;">
-                <button type="button" class="btn btn-outline-success" onclick="location.href='/board/write'">글쓰기</button>   
+                <!-- <button type="button" class="btn btn-outline-success" onclick="location.href='/cartlist/buy'">구매하기</button>    -->
+                <button type="button" class="btn btn-outline-success" onclick="alert('구매완료')">구매하기</button>   
              </div>
             </div>
             </div>
