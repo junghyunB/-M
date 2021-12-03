@@ -37,7 +37,7 @@
             </div>
         </nav>
         <!-- cart Header-->
-        <header class="masthead" style="background-image: url('/submain/assets/img/cart3.jpg')">
+        <header class="masthead" style="background-image: url('/submain/assets/img/cart4.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -72,12 +72,15 @@
                     }else{
                         var data = rows[i]
                     %>
-                    <tr>
-                        <td><%= i + 1 %></td>
-                        <td><%= data.music %></td>
-                        <td><%= data.singer %></td>
-                        <td><%= data.price %></td>
-                    </tr>
+                    <form id="contactForm" action="/cartlist/delete" method="post">
+                        <tr id='selected'>
+                            <td><input type="hidden" name="no" value=<%= i + 1 %> ><%= i + 1 %></td>
+                            <td><input type="hidden" name="music" value=<%= data.music %>><%= data.music %></td>
+                            <td><input type="hidden" name="singer" value=<%= data.singer %>><%= data.singer %></td>
+                            <td><input type="hidden" name="price" value=<%= data.price %> ><%= data.price %></td>
+                            <td><button type="submit" class="btn btn-ouline-success">삭제</button></td>
+                        </tr>
+                    </form>
                     <% }
                     }
                     %>

@@ -25,6 +25,7 @@ router.post('/Selling', function(req, res, next){
         if (err) console.error("err : " + err);
         res.redirect('/cartlist/cart')
     });
+    console.log(req.body);
 });
 
 
@@ -39,6 +40,24 @@ router.get('/cart/:cart', function(req, res, next){ // 게시글 리스트에 :p
         if (err) console.error("err : " + err);
         res.render('cart', {rows:rows, cart:cart, length:rows.length-1, cart_num:10, pass:true}); 
         // length 데이터 전체넘버 랜더링,-1을 한이유는 db에서는1부터지만 for문에서는 0부터 시작 ,page_num: 한페이지에 보여줄 갯수
+    });
+});
+
+router.post('/delete', function(req,res,next){
+
+    console.log(req.body)
+    // res.redirect('/cartlist/cart/1')
+    var music = req.body.music                  
+    var singer = req.body.singer;
+    var price = req.body.price;
+    var datas = [music, singer, price]; // 모든데이터를 배열로 묶기
+    // var sql = `DELETE FROM cart WHERE (music, singer, price) VALUES (? ? ?)`; // 업데이트 수정과 거의 비슷한 쿼리문
+    var sql = `DELETE FROM cart WHERE music = ? AND singer = ? AND price = ?`; // 업데이트 수정과 거의 비슷한 쿼리문
+    // console.log(datas)
+    connection.query(sql, datas, function(err, result){
+        if(err) {console.error(err)};
+        console.log(datas, 'deleted')
+        res.redirect('/cartlist/cart');
     });
 });
 
